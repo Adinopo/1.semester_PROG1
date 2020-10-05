@@ -26,8 +26,8 @@ for i in range(5):
     
 turtle.fd(50)    
     
-#print(turtle.towards(var2))
-#print(var1)
+print(turtle.towards(var2))
+print(var1)
 
 
         #    turtle.setheading(
