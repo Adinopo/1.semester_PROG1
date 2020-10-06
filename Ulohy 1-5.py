@@ -14,7 +14,6 @@ def nemo():
     turtle.bye()
     
 
-##var_1 = turtle.textinput("Prompt", "Enter integer number > 0 :")
 #            Priklad 1
 turtle.penup()
 turtle.setposition(-300,0)
@@ -63,23 +62,33 @@ turtle.clear()
 #           Priklad 5
 turtle.home()
 var=0
+i = 0
 for i in range(5):
-    for j in range(3):
-        if (var==0):
-            turtle.fd(50)
-            var3=turtle.position()
-            turtle.left(90)
-            turtle.fd(50)
-            var=+1
-        else:
-            turtle.setheading(
-              
-        var1=turtle.position()
+    if (i==0):
+        turtle.fd(50)
+        var3=turtle.position()
+        turtle.left(90)
+        turtle.fd(50)
+        var2=turtle.position()
         turtle.home()
-        var2=turtle.distance(int(var1))
+        var1=turtle.distance(var2)
+        turtle.setheading(turtle.towards(var2))
+        turtle.fd(var1)
+        turtle.left(90)
+        i=+1
+    else:
+        turtle.fd(50)
+        var2=turtle.position()
+        turtle.home()
+        var1=turtle.distance(var2)
+        turtle.setheading(turtle.towards(var2))
+        turtle.fd(var1)
+        turtle.left(90)
+
+turtle.fd(50)
         
 
-
+#           Hrajkanie sa s myšou a klavesou
 turtle.onkeypress(nemo, "q")
 
 turtle.onkeypress(meno, "Up")
