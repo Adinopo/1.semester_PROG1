@@ -1,76 +1,73 @@
 import turtle
 
 turtle.hideturtle()
-turtle.speed(10)
-turtle.pu()
-turtle.goto(-250,250)
-turtle.pd()
+#turtle.speed(10)
+turtle.delay(0)
 
-sum = 0
+def premiestni(suradnice):
+    turtle.pu()
+    turtle.goto(suradnice)
+    turtle.pd()
 
-'''for lupen in range(7):
-    for i in range(50):
+
+def premiestnihome():
+    turtle.pu()
+    turtle.home()
+    turtle.pd()
+
+
+def kvet():
+    sum = 0
+    for lupen in range(7):
+        for i in range(50):
+            turtle.left(1)
+            turtle.forward(3)
+
+        premiestnihome()
+
+        sum+=50
+        turtle.left(sum)
+
+        for i in range(50):
+            turtle.right(1)
+            turtle.forward(3)
+
+        premiestnihome()
+
+        turtle.left(sum)
+
+
+def stonka():
+    turtle.home()
+    turtle.left(240)
+    for i in range(60):             # Stonka kolmo na dol
         turtle.left(1)
-        turtle.forward(5)
-
-    turtle.pu()
-    turtle.home()
-    turtle.pd()
-
-    sum+=50
-    turtle.left(sum)
-
-    for i in range(50):
-        turtle.right(1)
-        turtle.forward(5)
-
-    turtle.pu()
-    turtle.home()
-    turtle.pd()
+        turtle.forward(6)           # Dlzka stonky
 
 
-    turtle.left(sum)
-'''
+def listky():
+    turtle.setheading(0)
+    var = turtle.position()
 
-turtle.left(240)            # Stonka
-for i in range(40):
-    turtle.left(1.5)
-    turtle.forward(7)
+    for leaves in range(2):         # Cyklus na vykreslenie oboch lístkov
+        for i in range(30):         # 1 listok
+            turtle.forward(4)
+            turtle.left(3)
 
-turtle.setheading(0)
-var = turtle.position()
+        premiestni(var)
 
-for i in range(30):         # Prvy listok
-    turtle.forward(4)
-    turtle.left(3)
+        for i in range(30):         # 2 listok
+            turtle.right(3)
+            turtle.forward(4)
 
-
-turtle.pu()
-turtle.goto(var)
-turtle.pd()
-
-for i in range(30):
-    turtle.right(3)
-    turtle.forward(4)
-
-turtle.pu()
-turtle.goto(var)
-turtle.pd()
-turtle.left(90)
-
-for i in range(30):             # Druhy listok
-    turtle.forward(4)
-    turtle.left(3)
+        turtle.pu()
+        turtle.goto(var)
+        turtle.pd()
+        turtle.left(90)
 
 
-turtle.pu()
-turtle.goto(var)
-turtle.pd()
+kvet()
+stonka()
+listky()
 
-#turtle.left(10)
-for i in range(30):
-    turtle.right(3)
-    turtle.forward(4)
-
-
-turtle.exitonclick()
+turtle.exitonclick()                # Nezavrie canvas hneď, ale čaká na mouse-click
