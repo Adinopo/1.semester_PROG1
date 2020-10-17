@@ -52,19 +52,7 @@ def video(feet = 0, inches = 0):            # keyword arguments
     else:
         print("Your string is more than 6 letters.")
 
-try:
-    f = open('teest.txt')
-    if f.name != 'test.txt':
-        raise Exception
-except FileNotFoundError as q:           #FileNotFoundError: default python dlhá správa
-    print(q)
-except Exception as e:
-    print("Mnou vytvorená Exception")
-else:
-    print(f.read())
-    f.close
-finally:                    # Urobí sa vždy, nehladiac na predošlé veci
-    print("Toto sa aj tak vypíše!")
+
 
 
 
