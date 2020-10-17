@@ -3,8 +3,11 @@ Ulohy cvicenia 4
 '''
 
 import turtle
-turtle.hideturtle()
-turtle.delay(0)
+
+from pip._vendor.distlib.compat import raw_input
+
+#turtle.hideturtle()
+#turtle.delay(0)
 
 #2
 def test_parita(cislo):
@@ -38,11 +41,36 @@ def min_troch(a, b, c):
 def menu(znak):
     if znak == "s":
         print() # vykresli stvorec
-    elif znak == "t": 
+    elif znak == "t":
         print() # vykresli 3-uholnik
 
-znak = input("Enter a char: ")
-menu(znak)
+
+def video(feet = 0, inches = 0):            # keyword arguments
+    inputt = input("Enter code:")
+    if len(inputt) < 6:                     # funkcia "len()"
+        print("Your string is less than 6 letters.")
+    else:
+        print("Your string is more than 6 letters.")
+
+try:
+    f = open('teest.txt')
+    if f.name != 'test.txt':
+        raise Exception
+except FileNotFoundError as q:           #FileNotFoundError: default python dlhá správa
+    print(q)
+except Exception as e:
+    print("Mnou vytvorená Exception")
+else:
+    print(f.read())
+    f.close
+finally:                    # Urobí sa vždy, nehladiac na predošlé veci
+    print("Toto sa aj tak vypíše!")
+
+
+
+
+#znak = input("Enter a char: ")
+#menu(znak)
 
 #cislo = int(input("Enter an integer value: "))
 #print(test_parita(cislo))

@@ -1,0 +1,3 @@
+Tu bude nejaky basic text.
+Skúšam prácu s textovými subormi.
+Dalšia veta do suboru!
