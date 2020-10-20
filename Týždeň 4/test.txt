@@ -1,3 +1,14 @@
 Tu bude nejaky basic text.
 Skúšam prácu s textovými subormi.
 Dalšia veta do suboru!
+
+1. Definujte funkciu s parametrom n, ktora vrati sucet 1+2+3+...+n. Vo funkcii pouzite rekurziu!
+2. Definujte funkciu s parametrom n. Funkcia nacita z klavesnice n cisel a vrati sucet nacitanych
+cisel. Vo funkcii pouzite rekurziu!
+3. Definujte funkciu s parametrom n. Funkcia nacita z klavesnice n cisel a vrati pocet, kolko z
+nacitanych cisel bolo parnych. Vo funkcii pouzite rekurziu!
+4. Definujte funkciu s parametrom n. Funkcia nacita z klavesnice n cisel a vrati najvacsie z
+nacitanych cisel. Vo funkcii pouzite rekurziu!
+5. Definujte funkciu s parametrom n. Funkcia nacita z klavesnice n cisel a vrati hodnotu True, ak je
+sucet nacitanych cisel parny. V opacnom pripade vrati funkcia hodnotu False. Vo funkcii pouzite
+rekurziu!
