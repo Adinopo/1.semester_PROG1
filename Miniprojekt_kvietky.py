@@ -4,10 +4,9 @@ import turtle
 turtle.delay(0)
 turtle.hideturtle()
 
-def premiestni():
-    turtle.pu()
-    turtle.setpos(-100,-150)
-    turtle.pd()
+turtle.pu()
+turtle.setpos(-100,-150)
+turtle.pd()
 
 def polupen(uhol, pocet, velkost):                          # Spraví pol-lupeň
     for i in range(pocet):
@@ -43,6 +42,17 @@ def polupen_lavotocivy(uhol, pocet, dlzka):                     # LAVOTOCIVÁ ST
         turtle.right(uhol)
 
 
+def kvet(pocet_lup, uhol_lupen, pocet_lupen, velkost_lupen):
+    for i in range(pocet_lup):
+        lupen(uhol_lupen, pocet_lupen, velkost_lupen)
+        turtle.left(360 / pocet_lup)
+
+
+def list(uhol_list, pocet_list, velkost_list, uhol_listu):
+    list_p(uhol_list, pocet_list, velkost_list, uhol_listu)
+    list_l(uhol_list, pocet_list, velkost_list, uhol_listu)
+
+
 def stonka(polomer, uhol):
     if uhol < 0:                                            # Ak sa zadá záporný uhol
         uhol = uhol * (-1)
@@ -54,18 +64,15 @@ def stonka(polomer, uhol):
     turtle.seth(180 - (180 - uhol) / 2)
     polupen_lavotocivy(step_angle, n, step_length)
 
-
-def kvet(uhol_lupen, uhol_list, pocet_lupen, pocet_list, velkost, pocet_lup, uhol_listu):
-    premiestni()
-    list_p(uhol_list, pocet_list, velkost, uhol_listu)
-    list_l(uhol_list, pocet_list, velkost, uhol_listu)
-    stonka(60, -90)
-    for i in range(pocet_lup):
-        lupen(uhol_lupen, pocet_lupen, velkost)
-        turtle.left(360 / pocet_lup)
+# HLAVNA FUNKCIA
+def rastlina(uhol_lupen, uhol_list, pocet_lupen, pocet_list, velkost_lupen, velkost_list, pocet_lup, uhol_listu):
+    list(uhol_list, pocet_list, velkost_list, uhol_listu)
+    stonka(30, -60)
+    kvet(pocet_lup, uhol_lupen, pocet_lupen, velkost_lupen)
 
 
-kvet(6, 6, 9, 9, 19, 8, 30)
+
+rastlina(6, 2, 9, 9, 9, 14, 10, 40)
 
 turtle.exitonclick()
 
@@ -77,7 +84,8 @@ VYSVETLIVKY KVET :
     uhol_list - tučnosť/chudosť listu
     pocet_lupen - for-cyklus ide dlhšie - POMER, kde budú aj dlhšie aj tučnejšie
     pocet_list - for-cyklus ide dlhšie - POMER, kde budú aj dlhšie aj tučnejšie
-    velkost - dĺžka listov/kvetov 
+    velkost_lupen - dĺžka lupeňa
+    velkost_list - dĺžka listu 
     pocet_lup - počet lupeňov na kvete
     uhol_listu - uhol oboch listov od zeme
 '''
