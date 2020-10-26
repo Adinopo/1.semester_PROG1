@@ -75,13 +75,30 @@ def rec_sum_parne(n):
 
 # 6
 def rec_sum_prvocisla(n):
-    
+    if n == 2:
+        return 2
+    else:
+        cislo = rec_sum_prvocisla(n-1)
+        for i in range(2,n):
+            if n % i == 0:
+                sum = True
+                break
+            else:
+                sum = False
+        if sum is False:
+            return cislo + n
+        else:
+            return cislo
+
+# 7 Tower of Hanoi - video (hard)
+
+
+# 8 - 11 Exercises from pdf book
 
 
 
-
-
-print(rec_sum_parne(5))
+print(rec_sum_prvocisla(15))
+#print(rec_sum_parne(5))
 #print(rec_max(5))
 #print("Pocet parnych je " , rec_parne(5))
 #print(recur_sum_n(5))
