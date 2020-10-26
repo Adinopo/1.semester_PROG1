@@ -2,12 +2,6 @@
 Ulohy cvicenia 4
 '''
 
-import turtle
-
-from pip._vendor.distlib.compat import raw_input
-
-#turtle.hideturtle()
-#turtle.delay(0)
 
 #2
 def test_parita(cislo):
@@ -16,6 +10,8 @@ def test_parita(cislo):
     else:
         return False
 
+
+
 #3
 def min_dvoch(a, b):
     print("Smaller number is: ", end="")
@@ -23,6 +19,8 @@ def min_dvoch(a, b):
         print(a)
     else:
         print(b)
+
+
 
 #4
 def min_troch(a, b, c):
@@ -37,6 +35,8 @@ def min_troch(a, b, c):
     else:
         print(b)
 
+
+
 #5
 def menu(znak):
     if znak == "s":
@@ -45,6 +45,8 @@ def menu(znak):
         print() # vykresli 3-uholnik
     else:
         print("You entered wrong char!")
+
+
 
 #6
 def pocet_rovnakych(a, b, c):
@@ -55,6 +57,8 @@ def pocet_rovnakych(a, b, c):
     else:
         print("None of the numbers are equal.")
 
+
+
 #7
 def del_piatimi(n):
     sum = 0
@@ -64,6 +68,8 @@ def del_piatimi(n):
             sum += 1
     print(str(sum) + " numbers are divisible by 5.")
 
+
+
 #8
 def sum_num(n):
     sum = 0
@@ -71,6 +77,8 @@ def sum_num(n):
         num = int(input("Enter integer value: "))
         sum += num
     print(sum)
+
+
 
 #9-10
 def int_max(n):
@@ -89,11 +97,15 @@ def int_max(n):
             max_2 = num
     print(max,"\n",max_2)
 
+
+
 #11
 def delitelnost(num):
     for i in range(num):
         if num % (1+i) == 0:
             print(i+1)
+
+
 
 #12
 def prvocisla(a):
@@ -107,20 +119,26 @@ def prvocisla(a):
     if sum:
         print("Entered number is odd.")
 
+
+
 #12-1
 def prvocial_1(a):
-    if a == 2:
-        print("2")
-        return
     sum = True
-    for i in range(a-2):
-        for j in range(i+3):
-            if ((i+3) % (j+2)) > 0 and j+2 != i+3:
+    if a >= 2:
+        print(2)
+    for i in range(2,a+1):
+        for j in range(2,i):
+            if i % j == 0:
                 sum = True
-            else:
                 break
-        if sum:
-            print(i+3)
+            else:
+                sum = False
+        if sum == False:
+            print(i)
+
+
+
+
 
 
 
@@ -198,7 +216,7 @@ def knight_move(x1, y1, x2, y2):
 
 #-----------------------------------------------------
 
-#prvocial_1(15)
+prvocial_1(150)
 
 #prvocisla(2)
 
