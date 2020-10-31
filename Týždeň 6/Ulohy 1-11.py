@@ -72,11 +72,26 @@ def kolkokrat_vacsie_ako_predchadzajuce():
             index += 1
         number = cislo
         cislo = int(input("Enter number value: (for exit, press '0')"))
+    if number < cislo:
+        return print(index + 1)
+    return print(index)
 
 
 
+# 6
+def rovne_najvacsiemu_nacitanemu():
+    cislo = int(input("Enter number value (for exit, press '0'): "))
+    if cislo == 0:
+        return
+    max = 0
+    index = 0
+    predosle = 0
+    while cislo != 0:
+        if cislo > max
 
 
+
+#kolkokrat_vacsie_ako_predchadzajuce()
 #index_of_greatest()
 #dva_na_x(-16)
 #stvorce_mensie(10)
