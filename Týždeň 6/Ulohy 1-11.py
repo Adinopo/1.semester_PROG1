@@ -62,7 +62,7 @@ def index_of_greatest():
 
 # 5
 def kolkokrat_vacsie_ako_predchadzajuce():
-    cislo = int(input("Enter number value: (for exit, press '0')"))
+    cislo = int(input("Enter number value (for exit, press '0'): "))
     if cislo == 0:
         return
     number = cislo
@@ -71,7 +71,7 @@ def kolkokrat_vacsie_ako_predchadzajuce():
         if cislo > number:
             index += 1
         number = cislo
-        cislo = int(input("Enter number value: (for exit, press '0')"))
+        cislo = int(input("Enter number value (for exit, press '0'): "))
     if number < cislo:
         return print(index + 1)
     return print(index)
@@ -83,14 +83,51 @@ def rovne_najvacsiemu_nacitanemu():
     cislo = int(input("Enter number value (for exit, press '0'): "))
     if cislo == 0:
         return
-    max = 0
+    max = cislo
     index = 0
-    predosle = 0
     while cislo != 0:
-        if cislo > max
+        if cislo > max:
+            max = cislo
+            index = 0
+        if max == cislo:
+            index += 1
+        cislo = int(input("Enter number value (foe exit press '0'): "))
+    return print(index)
 
 
 
+# 7
+def pocet_v_postupnosti():
+    cislo = int(input("Enter number value (for exit, press '0'): "))
+    if cislo == 0:
+        return print("1")
+    index = 0
+    predosly_index = 0
+    predosle_cislo = cislo
+    while cislo != 0:
+
+        if cislo == predosle_cislo:
+            index += 1
+
+        if predosly_index < index:
+            predosly_index = index
+
+        if cislo != predosle_cislo:
+            index = 1
+
+        predosle_cislo = cislo
+        cislo  = int(input("Enter number value (for exit, press '0'): "))
+    return print(predosly_index)
+
+
+
+# 8
+def fibonacci_index_a(x):
+    pass
+
+
+#pocet_v_postupnosti()
+#rovne_najvacsiemu_nacitanemu()
 #kolkokrat_vacsie_ako_predchadzajuce()
 #index_of_greatest()
 #dva_na_x(-16)
