@@ -4,6 +4,9 @@ Ulohy z týždňa 6
 '''
 
 # 1
+import math
+
+
 def vrat_kladne():
     cislo = int(input("Enter number value: "))
     if cislo <= 0:
@@ -125,7 +128,49 @@ def pocet_v_postupnosti():
 def fibonacci_index_a(x):
     pass
 
+def fibonacci(n):
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return fibonacci(n-1) + fibonacci(n-2)
 
+
+
+# 9
+def my_sqrt(a):
+    i = 1
+    while a > 0:
+        x = (3 + i/3)/2
+        while True:
+            y = (x + i/x)/2
+            if y == x:
+                break
+            x = y
+        print(i, 4*' ', '%.2f' % y, 4*" ", math.sqrt(a).__round__(2))                       # VSIMNI FORMAT VYSTUPU!
+        a -= 1
+        i += 1
+
+
+
+# 10                # MOC NECHAPEM POUZITIE
+def my_eval():
+    while True:
+        put = input()
+        if put == 'done':
+            return
+        print(eval(put))
+
+
+
+# 11
+def Komplikovaný_vzorec_JEDNA_LOMENO_PI_SUMA():
+    pass
+
+
+my_eval()
+#my_sqrt(9)
 #pocet_v_postupnosti()
 #rovne_najvacsiemu_nacitanemu()
 #kolkokrat_vacsie_ako_predchadzajuce()
