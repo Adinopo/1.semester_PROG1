@@ -31,7 +31,7 @@ def stvorce_mensie(n):
 
 
 
-# 3
+# 3                                         prerobiť len s použitím násobenia
 def dva_na_x(n):
     if n > 0:
         cislo = 0
@@ -126,7 +126,13 @@ def pocet_v_postupnosti():
 
 # 8
 def fibonacci_index_a(x):
-    pass
+    n = 0
+    while True:
+        if fibonacci(n) == x:
+            return n
+        if fibonacci(n) > x:
+            return -1
+        n += 1
 
 def fibonacci(n):
     if n == 0:
@@ -154,12 +160,17 @@ def my_sqrt(a):
 
 
 
-# 10                # MOC NECHAPEM POUZITIE
+# 10
 def my_eval():
+    vstup = input()
+    if vstup == 'done':
+        return print("Nezadal si nič.")
+    print(eval(vstup))
     while True:
         put = input()
         if put == 'done':
-            return
+            return print(a)
+        a = put
         print(eval(put))
 
 
@@ -167,6 +178,8 @@ def my_eval():
 # 11
 def Komplikovaný_vzorec_JEDNA_LOMENO_PI_SUMA():
     pass
+
+
 
 
 my_eval()
