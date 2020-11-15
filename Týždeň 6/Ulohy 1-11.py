@@ -182,7 +182,7 @@ def Komplikovaný_vzorec_JEDNA_LOMENO_PI_SUMA():
 
 
 
-my_eval()
+#my_eval()
 #my_sqrt(9)
 #pocet_v_postupnosti()
 #rovne_najvacsiemu_nacitanemu()
