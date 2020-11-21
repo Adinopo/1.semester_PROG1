@@ -103,8 +103,51 @@ def chapter9(forbidden: str):
 
 
 
+# Nejde dobre
+def exe_9_7():
+    file = open("words.txt")
+    sum = 0
+    for line in file:
+        line = line.strip()
+        for char in range(len(line) - 1):
+            char = char * 2
+            if char >= len(line) - 1:
+                break
+            if line[char] == line[char + 1]:
+                sum += 1
+                if sum == 3:
+                    print(line)
+                    sum = 0
+                    break
+            else:
+                sum = 0
 
-chapter9("tph")
+
+
+# Picovina na ntu
+def exe_9_8():
+    pass
+
+# Picovina na ntu
+def exe_9_9():
+    '''
+    vek = 20
+    stringo = str(vek).zfill(2)
+    print(stringo)
+
+    vek_2 = 2
+    strigno = str(vek_2).zfill(2)
+    print(strigno[::-1])
+    '''
+    pass
+
+
+
+
+
+
+#exe_9_7()
+#chapter9("tph")
 #caesar_cyphher("andrej", 4)
 #palindrom("jEleJ")
 #cool_methods_chapter8("Andrej", 2, "ej")
