@@ -5,7 +5,8 @@ LISTS
 """
 
 from bisect import *
-import random, time
+import random
+import time
 
 
 # From python documentation about BISECT module
@@ -139,8 +140,10 @@ def make_word_append():
     words = open(r"C:\Users\Acer-PC\OneDrive\FEI STU\1.semester\Programovanie 1\words.txt")
     newone = []
     for word in words:
-        newone.append(word)
+        slovo = word.strip()
+        newone.append(slovo)
     words.close()
+    return newone
 
 def make_word_plus():
     words = open(r"C:\Users\Acer-PC\OneDrive\FEI STU\1.semester\Programovanie 1\words.txt")
@@ -163,16 +166,49 @@ def timecompare_append_vs_plus():
 
 
 # Check  if word is in word-list using "bisect" function
-def is_in_wordlist(word: str):
-    file = open(r"C:\Users\Acer-PC\OneDrive\FEI STU\1.semester\Programovanie 1\words.txt")
-    i = 0
-    length = len(word)
-    while length > 0:
-        half = bisect(file, word[i])
-        i += 1
-        length -= 1
-    if word in half:
-        print()
+def is_in_wordlist(word: str, listik: list):
+    if len(listik) == 0:
+        print("Word is not in a list. Terminating...")
+        return
+    i = len(listik) // 2
+    if listik[i] == word:
+        print("Word found!", listik[i], "=", word)
+        return
+    if listik[i] > word:
+        return is_in_wordlist(word, listik[:i])
+    else:
+        return is_in_wordlist(word, listik[i+1:])
+
+
+def is_in_bisect(word: str, listik: list):
+    i = bisect_left(listik, word)
+    if i == len(listik):
+        return False
+
+    return listik[i] == word
+
+
+def reverse_pair(listik: list):
+    for i in range(len(listik)):
+        word = listik[i]
+        word_revers = word[::-1]
+        if is_in_bisect(word_revers, listik):
+            print(word, word_revers)
+
+
+def interlock(listik: list):
+    for i in range(len(listik)):
+        word = listik[i]
+        evens = word[::2]
+        odds = word[1::2]
+        if is_in_bisect(evens, listik) and is_in_bisect(odds, listik):
+            print(f"{word} is interlock of {evens} and {odds}")
+    print(25 * "-")
+
+    for j in range(len(listik)):
+        word = listik[j]
+        if is_in_bisect(word[1::3], listik) and is_in_bisect(word[2::3], listik) and is_in_bisect(word[3::3], listik):
+            print(word, " is 3-interlock of these 3 words ->", word[1::3], word[2::3], word[3::3])
 
 
 # [grade(score) for score in [33, 99, 77, 70, 89, 90, 100]]
@@ -187,4 +223,9 @@ intervals = [[0, 3], [2, 6], [7, 9]]
 # multiply_matrix(matrix, matrix_2)
 # prienik_intervalov(intervals)
 # birthday_paradox()
-timecompare_append_vs_plus()
+# timecompare_append_vs_plus()
+word_list = make_word_append()
+# is_in_wordlist('skyman', word_list)
+# is_in_bisect("trains", word_list)
+# reverse_pair(word_list)
+interlock(word_list)
