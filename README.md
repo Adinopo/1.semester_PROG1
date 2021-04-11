@@ -1,4 +1,4 @@
-# 1.semester_PYTHON
+# 1.semester_PROG1
 Cvičenia
 
 Starting a new journey with GIT!
